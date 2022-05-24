@@ -18,7 +18,7 @@ function user_register($request) {
 			echo "User already registered with these email";
 		}
 		else{
-			$insert_query = $wpdb->insert(wp_register, array("username" => $username, "email" => $email, "password" => $password, "token"=>$token), array("%s", "%s", "%s", "%s"));
+			$insert_query = $wpdb->insert('wp_register', array("username" => $username, "email" => $email, "password" => $password, "token"=>$token), array("%s", "%s", "%s", "%s"));
 
 			if($insert_query){
 				echo "User Data Inserted Successfully \n";
